@@ -1,4 +1,5 @@
 const http = require('http');
+
 const server = http.createServer();
 
 server.on('request', (reg,res)=>{
@@ -10,6 +11,7 @@ server.on('request', (reg,res)=>{
             res.end('<b>page 123</b>');
             break;
         default:
+            res.writeHead(400)
             res.end('<b>Not found</b>');
             break;
     }
