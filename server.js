@@ -3,6 +3,7 @@ const http = require('http');
 const server = http.createServer();
 
 server.on('request', (reg,res)=>{
+    console.log(reg.url);
     switch(reg.url){
         case '/':
             res.end('<b>root page</b>');
@@ -20,4 +21,4 @@ server.on('request', (reg,res)=>{
     
 });
 
-server.listen(8080, ()=> console.log('Server work'));
+server.listen(8080, ()=> console.log('Server work. Listen port 8080'));
